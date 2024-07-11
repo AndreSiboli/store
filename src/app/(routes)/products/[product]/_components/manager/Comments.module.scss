@@ -1,0 +1,39 @@
+@use "@/styles/_dirs/variables" as var;
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  .comment {
+    max-width: 400px;
+    width: 100%;
+
+    border: 1px solid var.$brand_color_900;
+    padding: 1em;
+    border-radius: 0.5em;
+
+    &_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2em;
+
+      .header_name {
+        color: var.$brand_color_900;
+        font-weight: bold;
+      }
+
+      .header_date {
+        color: var.$neutral_color_700;
+        font-size: 0.9em;
+      }
+    }
+
+    &_text {
+      // &:not(:last-child){
+      margin-top: 1em;
+      // }
+    }
+  }
+}

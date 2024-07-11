@@ -1,0 +1,9 @@
+@use "@/styles/_dirs/variables" as var;
+
+.link {
+  display: block;
+  width: fit-content;
+  color: var.$support_color_err;
+  font-size: 0.9em;
+  margin-top: 1em;
+}

@@ -1,0 +1,29 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.profile {
+  padding: 7em 1em;
+
+  &_container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_wrapper {
+    padding: 1em 1em;
+    max-width: 800px;
+    box-shadow: 0 0 5px #0005;
+    border-radius: 1em;
+    width: 100%;
+
+    > :last-child {
+      margin-top: 2em;
+    }
+  }
+
+  &_loading {
+    max-width: 50px;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}

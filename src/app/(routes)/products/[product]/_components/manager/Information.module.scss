@@ -1,0 +1,26 @@
+@use "@/styles/_dirs/variables" as var;
+
+.information {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+
+  &_description {
+    p {
+      color: var.$neutral_color_700;
+    }
+  }
+
+  .information_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    
+    .info {
+      span {
+        color: var.$brand_color_900;
+        font-weight: bold;
+      }
+    }
+  }
+}

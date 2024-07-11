@@ -1,0 +1,23 @@
+@use "@/styles/_dirs/variables" as var;
+
+.products {
+  padding-top: 4em;
+  padding-bottom: 2em;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
+
+  &_groceries {
+    padding: 0 1em;
+
+    h2 {
+      color: var.$brand_color_900;
+      font-size: clamp(1.25em, 1.25em + 0.5vw, 3em);
+      font-weight: normal;
+      margin-bottom: 0.5em;
+    }
+  }
+}

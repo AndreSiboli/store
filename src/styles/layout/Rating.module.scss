@@ -1,0 +1,40 @@
+@use "@/styles/_dirs/variables" as var;
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+
+  &_stars {
+    display: flex;
+    gap: 0.05em;
+
+    .star {
+      width: 15px;
+      height: 15px;
+      background-color: #0005;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+
+      &_in {
+        height: 100%;
+        background: gold;
+      }
+    }
+  }
+
+  &_count {
+    width: 0.9em;
+    color: var.$neutral_color_700;
+  }
+}

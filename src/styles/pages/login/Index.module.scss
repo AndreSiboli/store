@@ -1,0 +1,36 @@
+@use "@/styles/_dirs/variables" as var;
+
+.login {
+  padding: 7em 2em;
+
+  .login_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+
+    .form_title {
+      h1 {
+        color: var.$brand_color_900;
+      }
+      p {
+        margin-top: 0.5em;
+        color: var.$neutral_color_600;
+      }
+
+      h1,
+      p {
+        text-align: center;
+      }
+    }
+
+    .form_signup {
+      p {
+        color: var.$neutral_color_600;
+        a {
+          color: var.$brand_color_900;
+        }
+      }
+    }
+  }
+}

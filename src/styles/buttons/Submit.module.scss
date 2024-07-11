@@ -1,0 +1,44 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.submit {
+  background: var.$brand_color_900;
+  border: none;
+  border-radius: 0.5em;
+  padding: 1em 2em;
+  color: var.$light_text_color;
+  cursor: pointer;
+  font-size: 1em;
+  transition: transform 0.1s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &_loading {
+    border: 3px solid transparent;
+    border-top-color: var.$light_text_color;
+    border-bottom-color: var.$light_text_color;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: 0.5s linear infinite spinner;
+    margin: 0 auto;
+
+    @keyframes spinner {
+      20% {
+        transform: rotate(0);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  @include mix.OnlyPc {
+    &:hover {
+      box-shadow: 5px 5px 0px #000;
+    }
+
+    &:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0px #000;
+    }
+  }
+}

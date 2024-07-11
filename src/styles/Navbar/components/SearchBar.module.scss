@@ -1,0 +1,40 @@
+@use "@/styles/_dirs/variables" as var;
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  visibility: hidden;
+  padding: 1em;
+  background: var.$lightest_color;
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px solid var.$brand_color_100;
+  z-index: 99;
+  transition: top 0.25s ease-in-out, visibility 0.25s ease-in-out;
+
+  &_wrapper {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  > button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      display: block;
+      font-size: 2em;
+      color: var.$brand_color_900;
+    }
+  }
+
+  &.search_active {
+    top: 0;
+    visibility: visible;
+  }
+}

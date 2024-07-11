@@ -1,0 +1,93 @@
+@use "@/styles/_dirs/variables" as var;
+
+.cart_item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+  background: var.$lightest_color;
+  box-shadow: 0 0 5px #0005;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 100%;
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+  }
+
+  .cart_wrapper {
+    display: flex;
+    gap: 1em;
+
+    @media (max-width: 420px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .cart_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    h1 {
+      font-weight: normal;
+      color: var.$brand_color_900;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .info_price {
+      font-weight: bold;
+      font-size: 1.25em;
+    }
+
+    .info_description {
+      color: var.$neutral_color_600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .cart_image {
+    flex: 0 0 auto;
+    position: relative;
+    width: 115px;
+    height: 115px;
+  }
+
+  .cart_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+
+    > button {
+      align-self: flex-end;
+    }
+
+    .button_stock {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .25em;
+
+      p {
+        font-size: 0.9em;
+        color: var.$neutral_color_700;
+      }
+    }
+
+    @media (max-width: 420px) {
+      flex-direction: row;
+      margin-top: 1em;
+    }
+  }
+}

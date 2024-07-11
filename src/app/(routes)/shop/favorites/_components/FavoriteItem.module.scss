@@ -1,0 +1,77 @@
+@use "@/styles/_dirs/variables" as var;
+
+.favorite_item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5em;
+  background: var.$lightest_color;
+  box-shadow: 0 0 5px #0005;
+  border-radius: 0.5em;
+  padding: 1em;
+  width: 100%;
+
+  @media (max-width: 420px) {
+    flex-direction: column-reverse;
+  }
+
+  .favorite_wrapper {
+    display: flex;
+    gap: 1em;
+
+    @media (max-width: 420px) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  .favorite_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    h1 {
+      font-weight: normal;
+      color: var.$brand_color_900;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .info_price {
+      font-weight: bold;
+      font-size: 1.25em;
+    }
+
+    .info_description {
+      color: var.$neutral_color_600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .favorite_image {
+    flex: 0 0 auto;
+    position: relative;
+    width: 115px;
+    height: 115px;
+  }
+
+  .favorite_buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+
+    @media (max-width: 420px) {
+      flex-direction: row;
+    }
+  }
+}

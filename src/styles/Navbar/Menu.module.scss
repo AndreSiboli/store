@@ -1,0 +1,100 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.menu {
+  z-index: 98;
+  visibility: hidden;
+  transition: background 0.15s ease-in-out, visibility 0.25s ease-in-out;
+  position: fixed;
+  inset: 0;
+
+  &_wrapper {
+    background: var.$lightest_color;
+    width: 0;
+    transition: width 0.25s ease-in-out;
+    position: absolute;
+    height: 100%;
+    box-shadow: 0 1px 5px #0005;
+    padding-top: 4em;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &_group_nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2em;
+    height: 100%;
+    padding: 1em 0;
+    overflow-y: auto;
+  }
+
+  &_search {
+    position: absolute;
+    top: 22px;
+    right: 16px;
+  }
+
+  &_navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0 calc(1.5em + 2vw);
+
+    a {
+      font-size: 1.25em;
+      transition: transform 0.15s ease-in-out;
+
+      @include mix.OnlyPc {
+        &:hover {
+          transform: translate3d(3px, 0, 0);
+        }
+      }
+    }
+  }
+
+  &_icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    
+    .menu_social {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+
+      a {
+        svg {
+          font-size: 1.5em;
+        }
+      }
+    }
+
+    .menu_favorite {
+      display: none;
+      justify-content: center;
+      a {
+        display: block;
+        font-size: 1.5em;
+      }
+
+      @media (max-width: 420px) {
+        display: flex;
+      }
+    }
+  }
+
+  &.menu_active {
+    visibility: visible;
+    background: #0005;
+
+    .menu_wrapper {
+      width: 300px;
+
+      @media (max-width: 420px) {
+        width: 100%;
+      }
+    }
+  }
+}

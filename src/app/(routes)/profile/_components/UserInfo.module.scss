@@ -1,0 +1,79 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.user {
+  padding: 1em;
+  border-radius: 1em;
+  width: 100%;
+  position: relative;
+
+  &_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+
+    .user_image {
+      position: relative;
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      background: var.$brand_color_900;
+      overflow: hidden;
+    }
+
+    .user_info {
+      .username {
+        text-align: center;
+        color: var.$brand_color_900;
+      }
+
+      .email {
+        color: var.$neutral_color_700;
+        margin-top: 0.5em;
+      }
+    }
+  }
+
+  .user_data {
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    margin-top: 2em;
+
+    .data_card {
+      h2 {
+        font-size: 0.9em;
+        font-weight: normal;
+        color: var.$neutral_color_700;
+      }
+
+      p {
+        color: var.$brand_color_900;
+        margin-top: 0.25em;
+      }
+    }
+  }
+
+  .user_logout {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+    a {
+      svg {
+        font-size: 1.35em;
+        color: var.$brand_color_900;
+        transition: color 0.1s ease-in-out;
+      }
+
+      @include mix.OnlyPc {
+        &:hover {
+          svg {
+            color: #f00;
+          }
+        }
+      }
+    }
+  }
+}

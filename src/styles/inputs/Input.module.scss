@@ -1,0 +1,13 @@
+@use "@/styles/_dirs/variables" as var;
+
+.input {
+  border: 1px solid var.$neutral_color_300;
+  border-radius: 0.5em;
+  padding: 1em;
+  background: var.$neutral_color_200;
+  outline-color: var.$brand_color_900;
+
+  &::placeholder {
+    color: var.$neutral_color_500;
+  }
+}

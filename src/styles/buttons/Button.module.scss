@@ -1,0 +1,39 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  border: 1px solid var.$lightest_color;
+  background: transparent;
+  width: 100%;
+  color: var.$light_text_color;
+  padding: 1em 2em;
+  cursor: pointer;
+  border-radius: 0.5em;
+  transition: 0.1s ease-in-out;
+
+  @include mix.OnlyPc {
+    &:hover {
+      padding: 1em calc(2em - 0.25em);
+
+      .node {
+        gap: 1em;
+      }
+    }
+  }
+
+  &_text {
+    font-size: 1em;
+    transition: 0.1s ease-in-out;
+
+    &.node {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5em;
+
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+}

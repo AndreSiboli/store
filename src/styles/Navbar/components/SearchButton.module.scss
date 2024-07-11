@@ -1,0 +1,14 @@
+@use "@/styles/_dirs/variables" as var;
+
+.button {
+  display: block;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var.$brand_color_900;
+
+  svg {
+    display: block;
+    font-size: 1.65em;
+  }
+}

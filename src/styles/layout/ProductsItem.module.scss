@@ -1,0 +1,105 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 0 0 5px #0007;
+  border-radius: 0.5em;
+  user-select: none;
+
+  &_favorite {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+
+    button {
+      border: 1px solid var.$neutral_color_500;
+      border-radius: 50%;
+      background: transparent;
+      padding: 0.45em;
+      cursor: pointer;
+      transition: 0.15s ease-in-out;
+      text-align: center;
+
+      svg {
+        display: block;
+        color: var.$neutral_color_500;
+        font-size: 0.95em;
+      }
+
+      @include mix.OnlyPc {
+        &:hover {
+          background: var.$brand_color;
+          border-color: var.$lightest_color;
+
+          svg {
+            color: var.$lightest_color;
+          }
+        }
+      }
+    }
+  }
+
+  &_image {
+    position: relative;
+    width: 60%;
+    aspect-ratio: 1/1;
+    background: var.$lightest_color;
+    pointer-events: none;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    .info {
+      &_title {
+        h1 {
+          text-align: center;
+          color: var.$brand_color_900;
+          font-weight: normal;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+      }
+
+      &_description {
+        p {
+          font-size: 0.95m;
+          text-align: center;
+          color: var.$neutral_color_600;
+
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+      }
+      &_price {
+        p {
+          font-size: 1.5em;
+          font-weight: bold;
+          text-align: center;
+          color: var.$brand_color;
+        }
+      }
+    }
+  }
+
+  .info_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+    max-width: 200px;
+    width: 100%;
+  }
+}

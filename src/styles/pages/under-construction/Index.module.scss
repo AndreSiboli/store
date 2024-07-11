@@ -1,0 +1,26 @@
+@use "@/styles/_dirs/variables" as var;
+
+.construction {
+  padding: 0 1em;
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 7em 0;
+
+    @media (min-width: 1400px) {
+      min-height: 550px;
+    }
+  }
+
+  &_wrapper {
+    text-align: center;
+
+    a {
+      color: var.$brand_color_900;
+      margin: 1em;
+    }
+  }
+}

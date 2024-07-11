@@ -1,0 +1,82 @@
+@use "@/styles/_dirs/variables" as var;
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5em;
+  max-width: 300px;
+  width: 100%;
+
+  @media (max-width: 656px) {
+    max-width: 100%;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  .info_title {
+    h1 {
+      color: var.$brand_color_900;
+      font-size: 2em;
+    }
+  }
+
+  .info_price {
+    p {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: var.$brand_color_900;
+    }
+  }
+
+  .info_quantity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .stock_left {
+      p {
+        color: var.$neutral_color_700;
+      }
+    }
+  }
+
+  .info_buttons {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    button:last-child {
+      height: fit-content !important;
+    }
+  }
+}
+
+.info_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+
+  &_code {
+    p {
+      color: var.$neutral_color_700;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.tags {
+  &_title {
+    display: inline;
+  }
+
+  &_link {
+    display: inline;
+    color: var.$brand_color_900;
+  }
+}

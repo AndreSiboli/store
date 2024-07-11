@@ -1,0 +1,58 @@
+@use "@/styles/_dirs/variables" as var;
+
+.cart {
+  padding: 0em 1em;
+
+  &_container {
+    display: flex;
+    min-height: 100vh;
+    padding-top: 7em;
+    padding-bottom: 7em;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &_wrapper {
+    align-self: flex-start;
+    display: flex;
+    gap: 2em;
+    position: relative;
+    width: 100%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+
+  &_products {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  &_total {
+    flex: 0 0 200px;
+    position: sticky;
+    top: 25px;
+    height: fit-content;
+
+    @media (max-width: 768px) {
+      flex: 1 1 auto;
+      width: 100%;
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &_loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      color: var.$brand_color_900;
+      margin-top: 0.5em;
+    }
+  }
+}

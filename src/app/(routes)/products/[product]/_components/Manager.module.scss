@@ -1,0 +1,36 @@
+@use "@/styles/_dirs/variables" as var;
+
+.manager {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  width: 100%;
+
+  .manager_buttons {
+    display: flex;
+    gap: 1em;
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      position: relative;
+
+      &.active {
+        &:after {
+          background: var.$brand_color_900;
+        }
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 100%;
+        height: 3px;
+      }
+    }
+  }
+}

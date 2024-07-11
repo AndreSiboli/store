@@ -1,0 +1,35 @@
+@use "@/styles/_dirs/variables" as var;
+
+.radio {
+  input {
+    display: none;
+  }
+
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+
+    span {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      transition: 0.15s ease-in-out;
+
+      border: 1px solid var.$lightest_color;
+    }
+  }
+
+  input:checked ~ label {
+    width: 60px;
+    span {
+      background: var.$lightest_color;
+      width: 60px;
+      border-radius: 0.5em;
+    }
+  }
+}

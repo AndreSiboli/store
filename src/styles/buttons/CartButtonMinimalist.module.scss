@@ -1,0 +1,142 @@
+@use "@/styles/_dirs/variables" as var;
+@use "@/styles/_dirs/mixins" as mix;
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 0.25em;
+  cursor: pointer;
+  font-size: 1.25em;
+  background: var.$lightest_color;
+  width: 30px;
+  height: 30px;
+  color: var.$brand_color;
+  position: relative;
+
+  &_main_text,
+  &_dots,
+  &_check,
+  &_failed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &_main_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    transition: 0.25s;
+
+    svg {
+      font-size: 1.2em;
+    }
+  }
+
+  &_dots {
+    display: flex;
+    opacity: 0;
+    transform-origin: center;
+    gap: 0.25em;
+    transition: opacity 0.1s;
+
+    span {
+      border-radius: 50%;
+      background: var.$brand_color;
+      width: 5px;
+      height: 5px;
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  &_check,
+  &_failed {
+    svg {
+      opacity: 0;
+      font-size: 1.2em;
+      color: var.$brand_color;
+    }
+  }
+
+  &.loading {
+    .button_main_text {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .button_dots {
+      opacity: 1;
+
+      span {
+        animation: 0.5s ease-in-out infinite alternate-reverse dotting;
+
+        &:first-child {
+          animation-delay: 0.16s;
+        }
+        &:nth-child(2) {
+          animation-delay: 0.32s;
+        }
+        &:last-child {
+          animation-delay: 0.48s;
+        }
+      }
+    }
+  }
+
+  &.completed {
+    .button_main_text {
+      opacity: 0;
+      transform: scale(0);
+    }
+  }
+
+  &.failed {
+    border-color: var.$support_color_err;
+
+    .button_main_text {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .button_failed {
+      svg {
+        color: var.$support_color_err;
+        animation: 3s ease-in-out alternate failedAnimation;
+      }
+    }
+  }
+
+  @keyframes failedAnimation {
+    30% {
+      opacity: 1;
+      transform: scale(1.25);
+    }
+
+    50% {
+      transform: scale(1);
+    }
+
+    90% {
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0;
+    }
+  }
+
+  @keyframes dotting {
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+}

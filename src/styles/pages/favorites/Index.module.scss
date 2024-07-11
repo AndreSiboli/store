@@ -1,0 +1,45 @@
+@use "@/styles/_dirs/variables" as var;
+
+.favorites {
+  padding: 0 1em;
+
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7em;
+    padding-bottom: 7em;
+    min-height: 100vh;
+
+    @media (min-width: 1420px) {
+      min-height: 550px;
+    }
+  }
+
+  &_items {
+    align-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &_loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    
+    p {
+      text-align: center;
+    }
+
+    a {
+      color: var.$brand_color_900;
+      text-align: center;
+    }
+  }
+}

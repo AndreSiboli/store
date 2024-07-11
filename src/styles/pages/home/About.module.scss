@@ -1,0 +1,59 @@
+@use "@/styles/_dirs/variables" as var;
+
+.about {
+  padding: 1em;
+  padding-top: 5em;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+  }
+
+  &_title {
+    h1 {
+      color: var.$brand_color_900;
+      font-size: clamp(1.5em, 2em + 1vw, 4em);
+      text-align: center;
+    }
+  }
+
+  &_action {
+    p {
+      color: var.$neutral_color_600;
+      line-height: 1.5em;
+      text-align: center;
+    }
+  }
+
+  &_stamps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em 3em;
+    margin-top: 1em;
+
+    .stamp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25em;
+
+      svg {
+        display: block;
+        font-size: 3em;
+        color: var.$brand_color;
+      }
+
+      h3 {
+        font-weight: bold;
+        color: var.$neutral_color_700;
+      }
+
+      p {
+        color: var.$neutral_color_600;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.delete {
+  &_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    padding: 7em 1em;
+  }
+
+  &_loading {
+    max-width: 50px;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}

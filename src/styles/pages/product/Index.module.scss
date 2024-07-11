@@ -1,0 +1,56 @@
+@use "@/styles/_dirs/variables" as var;
+
+.product {
+  padding: 0 1em;
+  padding-top: 7em;
+  padding-bottom: 3em;
+  min-height: 100vh;
+
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  &_header {
+    display: flex;
+    gap: 3em;
+    width: 100%;
+
+    @media (max-width: 656px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &_image {
+    position: relative;
+    width: 300px;
+    aspect-ratio: 1/1;
+    border-radius: 0.5em;
+    box-shadow: 0 0 5px #0008;
+  }
+
+  &_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+
+  &_loading {
+    max-width: 25px;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}
