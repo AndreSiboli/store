@@ -8,7 +8,7 @@ import { ProductsType } from "@/_types/ProductsType";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/_contexts/UserContext";
 import { CartContext } from "@/_contexts/CartContext";
-import { deleteCartItemDB, setCartItemDB } from "@/services/cart";
+import { deleteCartItemDB, setCartItemDB } from "@/services/auth/cart";
 
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 

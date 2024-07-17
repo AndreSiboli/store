@@ -3,7 +3,7 @@
 import { CartContext } from "@/_contexts/CartContext";
 import { UserContext } from "@/_contexts/UserContext";
 import { ProductsAPIType } from "@/_types/ProductsType";
-import { deleteCartItemDB, setCartItemDB } from "@/services/cart";
+import { deleteCartItemDB, setCartItemDB } from "@/services/auth/cart";
 import styles from "@/styles/buttons/CartButtonMinimalist.module.scss";
 import { useContext, useEffect, useState } from "react";
 
@@ -62,6 +62,7 @@ export default function CartButtonMinimalist(props: PropsType) {
     <button
       className={`${styles.button} ${styles[isLoading]}`}
       onClick={addToCart}
+      aria-label="Add to cart"
     >
       <div className={styles.button_main_text}>
         {isInCart ? <PiCheck /> : <PiShoppingCart />}

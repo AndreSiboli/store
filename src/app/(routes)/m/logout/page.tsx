@@ -1,7 +1,7 @@
 "use client";
 
 import { UserContext } from "@/_contexts/UserContext";
-import { deleteAccountDB, logout } from "@/services/authServices";
+import { deleteAccountDB, logout } from "@/services/auth/user";
 import { useRouter } from "next/navigation";
 import { useContext, useEffect } from "react";
 import styles from "@/styles/pages/delete-account/Index.module.scss";
@@ -13,10 +13,12 @@ export default function Logout() {
 
   useEffect(() => {
     async function logoutAcc() {
-      if (!user) return;
-      const isLogout = await logout();
-      if (!isLogout) return;
-      location.reload();
+      if (user) {
+        const isLogout = await logout();
+        if (!isLogout) return;
+      }
+      
+      location.assign("/");
     }
     logoutAcc();
   }, []);

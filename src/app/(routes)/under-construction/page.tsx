@@ -8,7 +8,7 @@ export default function UnderConstruction() {
       <Container>
         <div className={styles.construction_container}>
           <div className={styles.construction_wrapper}>
-            <p>For being a fictional site. This page is under contruction. </p>
+            <p>For being a fictional site. This page is under construction. </p>
             <Link href="/">Go back</Link>
           </div>
         </div>

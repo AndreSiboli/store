@@ -7,7 +7,7 @@ import styles from "@/styles/forms/FormLogin.module.scss";
 import Input from "../inputs/Input";
 import Link from "next/link";
 import Submit from "../buttons/Submit";
-import { login } from "@/services/authServices";
+import { login } from "@/services/auth/credentials";
 import { UserContext } from "@/_contexts/UserContext";
 import { useRouter } from "next/navigation";
 

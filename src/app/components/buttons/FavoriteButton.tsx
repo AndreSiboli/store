@@ -3,7 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/_contexts/UserContext";
 import { ProductsAPIType } from "@/_types/ProductsType";
-import { deleteFavoritesDB, setFavoritesDB } from "@/services/favorites";
+import { deleteFavoritesDB, setFavoritesDB } from "@/services/auth/favorites";
 import styles from "@/styles/buttons/FavoriteButton.module.scss";
 
 import { PiHeartFill } from "react-icons/pi";

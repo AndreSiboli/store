@@ -2,7 +2,7 @@ import { UserType } from "@/_types/UserType";
 import styles from "./UserInfo.module.scss";
 import { formatDate } from "@/utils/treatDates";
 import { CiLogout } from "react-icons/ci";
-import { logout } from "@/services/authServices";
+import { logout } from "@/services/auth/user";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 

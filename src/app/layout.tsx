@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "@/styles/globals.scss";
 import MainContainer from "./components/layout/MainContainer";
-import { PrivateRouteProvider } from "@/_contexts/PrivateRoute";
 import { UserProvider } from "@/_contexts/UserContext";
 import { CartProvider } from "@/_contexts/CartContext";
 
@@ -26,13 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <PrivateRouteProvider>
-          <UserProvider>
-            <CartProvider>
-              <MainContainer>{children}</MainContainer>
-            </CartProvider>
-          </UserProvider>
-        </PrivateRouteProvider>
+        <UserProvider>
+          <CartProvider>
+            <MainContainer>{children}</MainContainer>
+          </CartProvider>
+        </UserProvider>
       </body>
     </html>
   );

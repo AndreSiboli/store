@@ -2,13 +2,14 @@
 
 import { ProductsAPIType } from "@/_types/ProductsType";
 import { UserType } from "@/_types/UserType";
-import { getUserDB } from "@/services/authServices";
+import { firstLoadingPage, getUserDB } from "@/services/auth/user";
 import { getAllProductsById } from "@/services/products";
 import { ReactNode, createContext, useLayoutEffect, useState } from "react";
 
 interface UserContextType {
   user: UserType | null;
   favorites: ProductsAPIType[];
+  firstLoad: boolean;
   defineUser: (data: UserType) => void;
   defineFavorite: (data: ProductsAPIType) => void;
   deleteFavorite: (id: string | number) => void;
@@ -20,12 +21,14 @@ export const UserContext = createContext({} as UserContextType);
 
 export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<UserType | null>(null);
+  const [firstLoad, setFirstLoad] = useState(true);
   const [favorites, setFavorites] = useState<ProductsAPIType[]>([]);
 
   useLayoutEffect(() => {
     async function gettingUser() {
       if (user) return;
-      const userData = await getUserDB();
+      const userData = await firstLoadingPage();
+      setFirstLoad(false);
       if (!userData) return;
       defineUser(userData);
     }
@@ -76,6 +79,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
         deleteFavorite,
         isUserLogged,
         logoutUser,
+        firstLoad,
       }}
     >
       {children}

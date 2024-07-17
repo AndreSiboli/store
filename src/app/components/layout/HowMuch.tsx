@@ -5,7 +5,7 @@ import styles from "@/styles/layout/HowMuch.module.scss";
 
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { CartContext } from "@/_contexts/CartContext";
-import { updateHowManyDB } from "@/services/cart";
+import { updateHowManyDB } from "@/services/auth/cart";
 
 interface PropsType {
   inCart: number;

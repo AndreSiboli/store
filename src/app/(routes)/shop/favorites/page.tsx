@@ -7,8 +7,9 @@ import styles from "@/styles/pages/favorites/Index.module.scss";
 import Container from "@/app/components/layout/Container";
 import FavoriteItem from "./_components/FavoriteItem";
 import Link from "next/link";
+import withAuth from "@/app/components/auth/withAuth";
 
-export default function Favorites() {
+ function Favorites() {
   const { favorites } = useContext(UserContext);
 
   return (
@@ -32,3 +33,5 @@ export default function Favorites() {
     </main>
   );
 }
+
+export default withAuth(Favorites)

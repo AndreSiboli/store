@@ -1,8 +1,10 @@
 import styles from "@/styles/layout/Footer.module.scss";
-import Container from "./Container";
-import Logo from "./Logo";
-import { PiPinterestLogo, PiXLogo, PiYoutubeLogo } from "react-icons/pi";
+
+import Container from "@/app/components/layout/Container";
+import Logo from "@/app/components/layout/Logo";
 import Link from "next/link";
+
+import { PiPinterestLogo, PiXLogo, PiYoutubeLogo } from "react-icons/pi";
 
 export default function Footer() {
   const socials = [
@@ -74,7 +76,7 @@ export default function Footer() {
                       allgoods.ficional@outlook.com
                     </Link>
                   </p>
-                  <Link href="/SAQ">SAQ</Link>
+                  <Link href="/under-construction">SAQ</Link>
                 </nav>
               </nav>
 
@@ -92,7 +94,7 @@ export default function Footer() {
 
             <nav className={styles.nav_terms}>
               {terms.map((term) => (
-                <Link href={term.to} key={term.to}>
+                <Link href={'/under-construction'} key={term.to}>
                   {term.text}
                 </Link>
               ))}

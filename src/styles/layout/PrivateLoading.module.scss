@@ -1,0 +1,17 @@
+@use "@/styles/_dirs/variables" as var;
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var.$lightest_color;
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+
+  &_container {
+    max-width: 50px;
+    width: 100%;
+    aspect-ratio: 1/1;
+  }
+}

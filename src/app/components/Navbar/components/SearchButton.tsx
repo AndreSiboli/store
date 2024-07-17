@@ -13,7 +13,7 @@ export default function SearchButton(props: PropsType) {
   }
 
   return (
-    <button className={styles.button} onClick={onClick}>
+    <button className={styles.button} onClick={onClick} aria-label="Search">
       <PiMagnifyingGlass />
     </button>
   );

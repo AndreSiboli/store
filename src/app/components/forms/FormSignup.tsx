@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext, useRef, useState, useTransition } from "react";
+import { useRef, useState, useTransition } from "react";
 import {
   checkEmail,
   checkPassword,
@@ -10,12 +10,10 @@ import styles from "@/styles/forms/FormLogin.module.scss";
 
 import Input from "../inputs/Input";
 import Submit from "../buttons/Submit";
-import { signup } from "@/services/authServices";
-import { UserContext } from "@/_contexts/UserContext";
+import { signup } from "@/services/auth/credentials";
 import { useRouter } from "next/navigation";
 
 export default function FormSignup() {
-  const { defineUser } = useContext(UserContext);
   const router = useRouter();
   const emailRef = useRef<HTMLInputElement>(null);
   const usernameRef = useRef<HTMLInputElement>(null);

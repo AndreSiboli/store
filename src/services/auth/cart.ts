@@ -1,14 +1,8 @@
-import axios from "axios";
-import process from "process";
-
-const instance = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL,
-  withCredentials: true,
-});
+import { tokenInterceptor } from "./axiosConfig";
 
 export async function getCartDB() {
   try {
-    return await instance
+    return await tokenInterceptor
       .get(`/cart`)
       .then((res) => res)
       .catch((err) => null);
@@ -19,7 +13,7 @@ export async function getCartDB() {
 
 export async function setCartItemDB(productId: string | number) {
   try {
-    return await instance
+    return await tokenInterceptor
       .post(`/cart`, { productId })
       .then((res) => res)
       .catch((err) => null);
@@ -30,7 +24,7 @@ export async function setCartItemDB(productId: string | number) {
 
 export async function deleteCartItemDB(productId: string | number) {
   try {
-    return await instance
+    return await tokenInterceptor
       .delete(`/cart`, { data: { productId } })
       .then((res) => res)
       .catch((err) => null);
@@ -41,7 +35,7 @@ export async function deleteCartItemDB(productId: string | number) {
 
 export async function clearCartDB() {
   try {
-    return await instance
+    return await tokenInterceptor
       .delete(`/cart/clear`)
       .then((res) => res)
       .catch((err) => null);
@@ -58,7 +52,7 @@ export async function updateHowManyDB({
   howMany: number;
 }) {
   try {
-    return await instance
+    return await tokenInterceptor
       .patch(`/cart`, { productId, howMany })
       .then((res) => res)
       .catch((err) => null);

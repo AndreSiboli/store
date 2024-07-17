@@ -1,5 +1,5 @@
 import { useRef, useState, useTransition } from "react";
-import { changePasswordDB } from "@/services/authServices";
+import { changePasswordDB } from "@/services/auth/user";
 import { checkLoginPassword, checkPassword } from "@/utils/userDataManager";
 import styles from "@/styles/forms/FormChangePassword.module.scss";
 

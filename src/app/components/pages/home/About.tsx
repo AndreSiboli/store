@@ -27,7 +27,7 @@ export default function About() {
             {stamps.map((stamp) => (
               <div className={styles.stamp} key={stamp.title}>
                 {stamp.icon}
-                <h3>{stamp.title}</h3>
+                <h2>{stamp.title}</h2>
                 <p>{stamp.text}</p>
               </div>
             ))}

@@ -2,7 +2,6 @@
 
 import styles from "@/styles/pages/profile/Index.module.scss";
 
-import { useRouter } from "next/navigation";
 import { useContext } from "react";
 import { UserContext } from "@/_contexts/UserContext";
 
@@ -11,10 +10,10 @@ import Loading from "@/app/components/utils/Loading";
 import UserInfos from "./_components/UserInfos";
 import FormChangePassword from "@/app/components/forms/FormChangePassword";
 import DeleteAccount from "./_components/DeleteAccount";
+import withAuth from "@/app/components/auth/withAuth";
 
-export default function Profile() {
+function Profile() {
   const { user } = useContext(UserContext);
-  const route = useRouter();
 
   return (
     <main className={styles.profile}>
@@ -36,3 +35,5 @@ export default function Profile() {
     </main>
   );
 }
+
+export default withAuth(Profile);

@@ -5,7 +5,7 @@ import styles from "./Total.module.scss";
 import Button from "@/app/components/buttons/Button";
 
 import { PiShoppingBag } from "react-icons/pi";
-import { clearCartDB } from "@/services/cart";
+import { clearCartDB } from "@/services/auth/cart";
 
 export default function Total() {
   const { total, clearCart } = useContext(CartContext);

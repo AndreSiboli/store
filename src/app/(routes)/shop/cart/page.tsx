@@ -8,8 +8,9 @@ import Container from "@/app/components/layout/Container";
 import CartItem from "./_components/CartItem";
 import Total from "./_components/Total";
 import Link from "next/link";
+import withAuth from "@/app/components/auth/withAuth";
 
-export default function Cart() {
+function Cart() {
   const { cart } = useContext(CartContext);
 
   return (
@@ -38,3 +39,5 @@ export default function Cart() {
     </main>
   );
 }
+
+export default withAuth(Cart);
