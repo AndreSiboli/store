@@ -8,7 +8,7 @@ import Container from "../../layout/Container";
 export default async function Products() {
   const groceries: ProductsType[] = await getByCategory("groceries");
   const kitchen: ProductsType[] = await getByCategory("kitchen-accessories");
-  const smartphones: ProductsType[] = await getByCategory("smartphones");
+  const smartphones: ProductsType[] = await getByCategory("home-decoration");
 
   const configBase = {
     animationTime: 200,
@@ -45,8 +45,8 @@ export default async function Products() {
               </CarouselProducts>
             )}
           </div>
-          <div className={styles.products_groceries} id="smartphones">
-            <h2>Smartphones</h2>
+          <div className={styles.products_groceries} id="decoration">
+            <h2>Decoration</h2>
 
             {smartphones && (
               <CarouselProducts carouselConfig={configBase}>
